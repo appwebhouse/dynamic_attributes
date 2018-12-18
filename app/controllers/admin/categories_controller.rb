@@ -9,7 +9,7 @@ class Admin::CategoriesController < ApplicationController
 
   def new
     @category_form = CategoryForm.new
-    @category_form.properties = [PropertyForm.new]
+    @category_form.properties = [CategoryPropertyForm.new]
   end
 
   def edit

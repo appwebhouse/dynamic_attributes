@@ -11,7 +11,7 @@
     <% end %>
   </div>
 
-  <%= link_to 'add propery', '#', class: 'new-property', 'data-fields': render('property_fields', f: f, property: PropertyForm.new, index: 'PROPERTY_INDEX'), 'data-next-index': f.object.properties.length %>
+  <%= link_to 'add propery', '#', class: 'new-property', 'data-fields': render('property_fields', f: f, property: CategoryPropertyForm.new, index: 'PROPERTY_INDEX'), 'data-next-index': f.object.properties.length %>
 
   <%= yield f %>
 <% end %>

@@ -1,4 +1,4 @@
-class PropertyForm < ApplicationForm
+class CategoryPropertyForm < ApplicationForm
   PROPERTY_TYPES = ['string', 'integer', 'decimal', 'boolean']
 
   attribute :name, :string

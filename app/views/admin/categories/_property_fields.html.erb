@@ -1,7 +1,7 @@
 <div class="property-fields">
   <%= f.simple_fields_for :properties, property, index: index do |g| %>
     <%= g.input :name %>
-    <%= g.input :type, collection: PropertyForm::PROPERTY_TYPES %>
+    <%= g.input :type, collection: CategoryPropertyForm::PROPERTY_TYPES %>
 
     <%= link_to 'remove property', '#', class: 'remove-property' %>
   <% end %>

@@ -1,9 +1,9 @@
-class CategoryForm < ApplicationForm
+class ProductForm < ApplicationForm
   attribute :name, :string
-  attribute :parent_id, :integer
-  attribute :properties, :category_property_forms, default: ->{ Array.new }
+  attribute :category_id, :integer
+  attribute :properties, :product_property_forms, default: ->{ Array.new }
 
-  validates :name, presence: true
+  validates :name, :category_id, presence: true
   validate :properties_validation
 
   private

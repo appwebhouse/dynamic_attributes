@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <td><%= Product.human_attribute_name(:id) %></td>
+    <td><%= @product.id %></td>
+  </tr>
+
+  <tr>
+    <td><%= Product.human_attribute_name(:name) %></td>
+    <td><%= @product.name %></td>
+  </tr>
+
+  <tr>
+    <td><%= Product.human_attribute_name(:category_id) %></td>
+    <td><%= @product.category_id %></td>
+  </tr>
+
+  <% @product.properties.each do |attribute, value| %>
+    <tr>
+      <td><%= attribute %></td>
+      <td><%= value %></td>
+    </tr>
+  <% end %>
+
+  <tr>
+    <td><%= Product.human_attribute_name(:created_at) %></td>
+    <td><%= @product.created_at %></td>
+  </tr>
+
+  <tr>
+    <td><%= Product.human_attribute_name(:updated_at) %></td>
+    <td><%= @product.updated_at %></td>
+  </tr>
+</table>

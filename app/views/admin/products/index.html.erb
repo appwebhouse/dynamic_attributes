@@ -1,0 +1,27 @@
+<h1>Products</h1>
+
+<%= link_to 'New Product', new_admin_product_path %>
+
+<table>
+  <thead>
+    <th><%= Product.human_attribute_name(:id) %></th>
+    <th><%= Product.human_attribute_name(:name) %></th>
+    <th><%= Product.human_attribute_name(:category_id) %></th>
+    <th><%= Product.human_attribute_name(:created_at) %></th>
+    <th><%= Product.human_attribute_name(:updated_at) %></th>
+    <th colspan="3"></th>
+  </thead>
+
+  <% @products.each do |product| %>
+    <tbody>
+      <td><%= product.id %></td>
+      <td><%= product.name %></td>
+      <td><%= product.category_id %></td>
+      <td><%= product.created_at %></td>
+      <td><%= product.updated_at %></td>
+      <td><%= link_to 'Show', admin_product_path(product) %></td>
+      <td><%= link_to 'Edit', edit_admin_product_path(product) %></td>
+      <td><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tbody>
+  <% end %>
+</table>

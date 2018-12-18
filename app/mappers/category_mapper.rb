@@ -6,7 +6,7 @@ class CategoryMapper
     object.parent_id = category.parent_id
 
     object.properties = category.properties.map do |k, v|
-      PropertyForm.new(name: k, type: v['type'])
+      CategoryPropertyForm.new(name: k, type: v['type'])
     end
 
     object
