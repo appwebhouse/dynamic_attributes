@@ -1,0 +1,5 @@
+<h1>Edit Category</h1>
+
+<%= render 'form', resource: @category_form, url: admin_category_path(@category), method: :put do |f| %>
+  <%= f.button :submit, 'Update Category' %>
+<% end %>

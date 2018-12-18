@@ -1,0 +1,17 @@
+<%= simple_form_for resource, url: url, method: method do |f| %>
+  <%= f.input :name %>
+
+  <%= f.input :parent do %>
+    <%= f.input :parent_id, collection: Category.all, label_method: :name, value_method: :id, label: false %>
+  <% end %>
+
+  <div class="properties">
+    <% f.object.properties.each_with_index do |property, index| %>
+      <%= render 'property_fields', f: f, property: property, index: index %>
+    <% end %>
+  </div>
+
+  <%= link_to 'add propery', '#', class: 'new-property', 'data-fields': render('property_fields', f: f, property: PropertyForm.new, index: 'PROPERTY_INDEX'), 'data-next-index': f.object.properties.length %>
+
+  <%= yield f %>
+<% end %>
